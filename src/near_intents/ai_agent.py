@@ -50,7 +50,7 @@ import requests
 # Add the parent directory to sys.path so that 'near_intents' can be found
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from near_intents import (
+from near_intents.near_intents import (
     account,
     register_intent_public_key,
     intent_deposit,

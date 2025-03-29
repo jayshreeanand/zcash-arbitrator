@@ -16,15 +16,19 @@ SOLVER_BUS_URL = "https://solver-relay-v2.chaindefuser.com/rpc"
 
 ASSET_MAP = {
     'USDC': { 
-        'token_id': 'a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.factory.bridge.near',
-        'omft': 'eth-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.omft.near',
+        'token_id': 'usdc.testnet',
+        'omft': 'usdc.testnet',
         'decimals': 6,
     },
     'NEAR': {
-        'token_id': 'wrap.near',
+        'token_id': 'wrap.testnet',
         'decimals': 24,
     }
 }
+
+# Contract addresses for testnet
+INTENTS_CONTRACT = "intents.testnet"
+WRAP_CONTRACT = "wrap.testnet"
 
 
 class Intent(TypedDict):
@@ -155,7 +159,7 @@ def create_token_diff_quote(account, token_in, amount_in, token_out, amount_out)
     quote = Quote(
         nonce=nonce,
         signer_id=account.account_id,
-        verifying_contract='intents.near',
+        verifying_contract=INTENTS_CONTRACT,  # Use testnet contract
         deadline=str(int(time.time() * 1000) + 120000),  # 2 minutes from now
         intents=[
             Intent(
@@ -173,7 +177,7 @@ def create_token_diff_quote(account, token_in, amount_in, token_out, amount_out)
 
 
 def submit_signed_intent(account, signed_intent):
-    account.function_call("intents.near", "execute_intents", signed_intent, MAX_GAS, 0)
+    account.function_call(INTENTS_CONTRACT, "execute_intents", signed_intent, MAX_GAS, 0)
 
 
 def intent_deposit(account, token, amount):
@@ -183,9 +187,9 @@ def intent_deposit(account, token, amount):
         amount_raw = to_decimals(amount, ASSET_MAP[token]['decimals'])
         print(f"Depositing {amount} NEAR (raw amount: {amount_raw})")
         print("Wrapping NEAR before deposit")
-        account.function_call('wrap.near', 'near_deposit', {}, MAX_GAS, int(amount_raw))
-        account.function_call('wrap.near', 'ft_transfer_call', {
-            "receiver_id": "intents.near",
+        account.function_call(WRAP_CONTRACT, 'near_deposit', {}, MAX_GAS, int(amount_raw))
+        account.function_call(WRAP_CONTRACT, 'ft_transfer_call', {
+            "receiver_id": INTENTS_CONTRACT,
             "amount": amount_raw,
             "msg": ""
         }, MAX_GAS, 1)
@@ -194,16 +198,39 @@ def intent_deposit(account, token, amount):
         amount_raw = to_decimals(amount, ASSET_MAP[token]['decimals'])
         print(f"Depositing {amount} {token} (raw amount: {amount_raw})")
         account.function_call(ASSET_MAP[token]['token_id'], 'ft_transfer_call', {
-            "receiver_id": "intents.near",
+            "receiver_id": INTENTS_CONTRACT,
             "amount": amount_raw,
             "msg": ""
         }, MAX_GAS, 1)
 
 
 def register_intent_public_key(account):
-    account.function_call("intents.near", "add_public_key", {
-        "public_key": "ed25519:" + base58.b58encode(account.signer.public_key).decode('utf-8')
-    }, MAX_GAS, 1)
+    try:
+        # Get the current nonce from the account state
+        account_state = account.state()
+        if not account_state:
+            raise ValueError(f"Account {account.account_id} not found or not accessible")
+        
+        # Get the current nonce and increment it
+        current_nonce = account_state.get('nonce', 0)
+        next_nonce = current_nonce + 1
+        
+        # Register the public key with the next nonce
+        result = account.function_call(
+            INTENTS_CONTRACT,  # Use testnet contract
+            "add_public_key",
+            {
+                "public_key": "ed25519:" + base58.b58encode(account.signer.public_key).decode('utf-8')
+            },
+            MAX_GAS,
+            next_nonce
+        )
+        
+        print(f"Successfully registered public key with nonce {next_nonce}")
+        return result
+    except Exception as e:
+        print(f"Error registering public key: {str(e)}")
+        raise
 
 
 class IntentRequest(object):
