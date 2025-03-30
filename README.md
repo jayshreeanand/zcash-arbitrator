@@ -53,6 +53,18 @@ graph TB
         ML[ML Engine]
         TM[Trade Manager]
         RM[Risk Manager]
+        NI[NEAR Intents Manager]
+    end
+
+    subgraph Privacy
+        ZP[ZCash Privacy Layer]
+        SP[Shielded Pools]
+    end
+
+    subgraph NEAR
+        IC[Intent Contract]
+        SB[Solver Bus]
+        VC[Verifier Contract]
     end
 
     subgraph Data
@@ -73,18 +85,120 @@ graph TB
     API --> ML
     API --> TM
     API --> RM
+    API --> NI
 
     ML --> DB
     TM --> DB
     RM --> DB
+    NI --> DB
 
     ML --> Cache
     TM --> Cache
+    NI --> Cache
 
     TM --> EX1
     TM --> BC1
     ML --> PR1
+
+    NI --> IC
+    IC --> SB
+    SB --> VC
+
+    TM --> ZP
+    ZP --> SP
+    SP --> BC1
 ```
+
+### Architecture Components
+
+1. **Frontend Layer**
+
+   - Modern React-based dashboard
+   - Real-time price charts and statistics
+   - Transaction monitoring interface
+   - Portfolio management tools
+
+2. **Backend Services**
+
+   - API Gateway for service orchestration
+   - ML Engine for price prediction and opportunity detection
+   - Trade Manager for execution coordination
+   - Risk Manager for safety controls
+   - NEAR Intents Manager for cross-chain operations
+
+3. **NEAR Protocol Integration**
+
+   - Intent Contract: Defines trading parameters and conditions
+   - Solver Bus: Off-chain message bus for quote aggregation
+   - Verifier Contract: On-chain execution and settlement
+   - Chain signature validation for secure transactions
+
+4. **Privacy Layer**
+
+   - ZCash shielded transaction integration
+   - Private pool management
+   - Zero-knowledge proof generation
+   - Anonymous transaction routing
+
+5. **Data Management**
+   - Real-time price data collection
+   - Historical trade database
+   - Performance metrics tracking
+   - Cache layer for quick access
+
+### Data Flow
+
+1. **Price Discovery**
+
+   ```
+   Exchange APIs → Data Collection → Price History → ML Model
+   ```
+
+2. **Opportunity Detection**
+
+   ```
+   ML Model → Analysis → Risk Assessment → Trade Decision
+   ```
+
+3. **Trade Execution**
+
+   ```
+   Trade Manager → NEAR Intents → Solver Bus → Verifier Contract
+   ```
+
+4. **Privacy Protection**
+   ```
+   Transaction → ZCash Privacy Layer → Shielded Pool → Blockchain
+   ```
+
+### NEAR Intents Integration
+
+The system leverages NEAR Intents for efficient cross-chain operations:
+
+1. **Intent Creation**
+
+   - AI agent identifies arbitrage opportunity
+   - Creates intent request with trade parameters
+   - Signs request with chain signatures
+
+2. **Quote Aggregation**
+
+   - Intent request sent to Solver Bus
+   - Solvers compete to provide best execution
+   - Optimal quote selected based on price and gas fees
+
+3. **Execution**
+
+   - Selected quote signed by AI agent
+   - Submitted to Verifier Contract
+   - Transaction executed with privacy protection
+   - State changes verified on-chain
+
+4. **Settlement**
+   - Cross-chain settlement through NEAR Protocol
+   - Transaction confirmation and validation
+   - Update system state and balances
+   - Record transaction in history
 
 ## 🤖 Arbitrage Bot Flowchart
 
