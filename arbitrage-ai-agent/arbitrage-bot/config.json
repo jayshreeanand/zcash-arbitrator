@@ -1,0 +1,74 @@
+{
+    "chains": {
+        "ETH": {
+            "rpc_url": "https://mainnet.infura.io/v3/YOUR-PROJECT-ID",
+            "zec_token_address": "0x1234...",
+            "fees": 0.003,
+            "min_confirmations": 12
+        },
+        "SOL": {
+            "rpc_url": "https://api.mainnet-beta.solana.com",
+            "zec_token_address": "SOL456...",
+            "fees": 0.002,
+            "min_confirmations": 32
+        },
+        "BTC": {
+            "host": "localhost",
+            "port": 8332,
+            "user": "your-rpc-user",
+            "password": "your-rpc-password",
+            "zec_token_address": "bc1...",
+            "fees": 0.001,
+            "min_confirmations": 6
+        }
+    },
+    "trading": {
+        "min_spread": 0.02,
+        "min_profit": 0.01,
+        "max_amount": 10.0,
+        "min_amount": 0.1,
+        "max_slippage": 0.005
+    },
+    "monitoring": {
+        "interval": 5,
+        "confirmation_interval": 10,
+        "max_confirmation_attempts": 30,
+        "price_update_frequency": 60
+    },
+    "ml_model": {
+        "window_size": 24,
+        "prediction_horizon": 12,
+        "confidence_threshold": 0.8,
+        "training_interval": 3600
+    },
+    "privacy": {
+        "min_anonymity_set": 10,
+        "max_transaction_age": 86400,
+        "shielded_pool_size_threshold": 1000
+    },
+    "logging": {
+        "level": "INFO",
+        "trade_history_file": "trade_history.json",
+        "error_log_file": "error.log",
+        "performance_log_file": "performance.log"
+    },
+    "risk_management": {
+        "max_daily_trades": 50,
+        "max_daily_volume": 100.0,
+        "max_position_size": 20.0,
+        "stop_loss_percentage": 0.02
+    },
+    "notifications": {
+        "enabled": true,
+        "email": {
+            "smtp_server": "smtp.gmail.com",
+            "smtp_port": 587,
+            "sender_email": "your-email@gmail.com",
+            "recipient_email": "your-email@gmail.com"
+        },
+        "telegram": {
+            "bot_token": "your-bot-token",
+            "chat_id": "your-chat-id"
+        }
+    }
+} 

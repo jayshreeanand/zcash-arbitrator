@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* Hero Section */}
-      <div className="text-center py-16 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-xl">
+      <div className="text-center py-16 px-4 bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg shadow-xl">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           ZCash Cross-Chain Arbitrator
         </h1>
@@ -19,7 +19,7 @@ export default function Home() {
           AI-powered Cross-Chain Arbitrage Bot that detects and exploits price differences of ZEC across multiple blockchains (BTC, ETH, SOL) using NEAR Intents and Chain Signatures. Ensure privacy by leveraging Zcash&apos;s shielded transactions.
         </p>
         <div className="flex justify-center gap-4">
-          <Link href="/dashboard" className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+          <Link href="/dashboard" className="bg-white text-emerald-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
             Launch App
           </Link>
           <Link href="/demo" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
@@ -32,7 +32,7 @@ export default function Home() {
       <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Live Arbitrage Analysis</h2>
-          <Link href="/demo" className="text-indigo-600 hover:text-indigo-700 font-medium">
+          <Link href="/demo" className="text-emerald-600 hover:text-emerald-700 font-medium">
             View Full Demo →
           </Link>
         </div>
@@ -46,7 +46,7 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="text-indigo-600 dark:text-indigo-400 mb-4">
+            <div className="text-emerald-600 dark:text-emerald-400 mb-4">
               <FaRobot className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">AI-Powered Analysis</h3>
@@ -55,7 +55,7 @@ export default function Home() {
             </p>
           </div>
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="text-indigo-600 dark:text-indigo-400 mb-4">
+            <div className="text-emerald-600 dark:text-emerald-400 mb-4">
               <FaChartLine className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Cross-Chain Integration</h3>
@@ -64,7 +64,7 @@ export default function Home() {
             </p>
           </div>
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="text-indigo-600 dark:text-indigo-400 mb-4">
+            <div className="text-emerald-600 dark:text-emerald-400 mb-4">
               <FaLock className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Privacy Protection</h3>
@@ -73,7 +73,7 @@ export default function Home() {
             </p>
           </div>
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="text-indigo-600 dark:text-indigo-400 mb-4">
+            <div className="text-emerald-600 dark:text-emerald-400 mb-4">
               <FaShieldAlt className="w-8 h-8" />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Smart Automation</h3>
@@ -94,17 +94,17 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
             <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">Total Profit</h3>
-            <p className="text-3xl font-bold text-green-600 dark:text-green-400">$1.23</p>
+            <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">$1.23</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">+0.05% from last 24h</p>
           </div>
           <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
             <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">Active Opportunities</h3>
-            <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">2</p>
+            <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">2</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">Testing on 3 exchanges</p>
           </div>
           <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
             <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">Success Rate</h3>
-            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">80%</p>
+            <p className="text-3xl font-bold text-emerald-600 dark:text-emerald-400">80%</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">Last 5 test transactions</p>
           </div>
         </div>
@@ -135,8 +135,8 @@ export default function Home() {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="bg-indigo-100 dark:bg-indigo-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">1</span>
+            <div className="bg-emerald-100 dark:bg-emerald-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">1</span>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Monitor</h3>
             <p className="text-gray-600 dark:text-gray-400">
@@ -144,8 +144,8 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center">
-            <div className="bg-indigo-100 dark:bg-indigo-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">2</span>
+            <div className="bg-emerald-100 dark:bg-emerald-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">2</span>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Analyze</h3>
             <p className="text-gray-600 dark:text-gray-400">
@@ -153,8 +153,8 @@ export default function Home() {
             </p>
           </div>
           <div className="text-center">
-            <div className="bg-indigo-100 dark:bg-indigo-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">3</span>
+            <div className="bg-emerald-100 dark:bg-emerald-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">3</span>
             </div>
             <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Execute</h3>
             <p className="text-gray-600 dark:text-gray-400">
@@ -165,12 +165,12 @@ export default function Home() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-xl p-12 text-center">
+      <div className="bg-gradient-to-r from-emerald-600 to-green-600 text-white rounded-lg shadow-xl p-12 text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Start Trading?</h2>
         <p className="text-xl mb-8">
           Join the future of automated cross-chain arbitrage trading
         </p>
-        <Link href="/dashboard" className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+        <Link href="/dashboard" className="bg-white text-emerald-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
           Launch App
         </Link>
       </div>

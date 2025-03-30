@@ -85,14 +85,14 @@ export default function LiveArbitrageDemo() {
       {/* Analysis Status */}
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <div className="h-3 w-3 bg-green-500 rounded-full animate-pulse"></div>
+          <div className="h-3 w-3 bg-emerald-500 rounded-full animate-pulse"></div>
           <span className="text-gray-600 dark:text-gray-400">
             {analyzing ? 'Analyzing market conditions...' : 'Analysis complete'}
           </span>
         </div>
         <button 
           onClick={() => setAnalyzing(!analyzing)}
-          className="text-indigo-600 hover:text-indigo-700 font-medium"
+          className="text-emerald-600 hover:text-emerald-700 font-medium"
         >
           {analyzing ? 'Stop Analysis' : 'Start Analysis'}
         </button>
@@ -107,7 +107,7 @@ export default function LiveArbitrageDemo() {
           >
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center space-x-2">
-                <span className="text-gray-600 dark:text-gray-400">
+                <span className="text-emerald-600 dark:text-emerald-400">
                   {getChainIcon(price.chain)}
                 </span>
                 <span className="font-medium">{price.chain}</span>
@@ -117,7 +117,7 @@ export default function LiveArbitrageDemo() {
             <div className="flex items-baseline justify-between">
               <span className="text-2xl font-bold">${price.price.toFixed(2)}</span>
               <span className={`text-sm ${
-                price.change >= 0 ? 'text-green-500' : 'text-red-500'
+                price.change >= 0 ? 'text-emerald-500' : 'text-red-500'
               }`}>
                 {price.change >= 0 ? '+' : ''}{price.change.toFixed(2)}%
               </span>
@@ -128,8 +128,8 @@ export default function LiveArbitrageDemo() {
 
       {/* Arbitrage Opportunity */}
       {opportunity && (
-        <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg border border-green-200 dark:border-green-800">
-          <h3 className="text-lg font-semibold text-green-700 dark:text-green-400 mb-2">
+        <div className="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg border border-emerald-200 dark:border-emerald-800">
+          <h3 className="text-lg font-semibold text-emerald-700 dark:text-emerald-400 mb-2">
             Arbitrage Opportunity Detected!
           </h3>
           <div className="flex items-center justify-between">
@@ -138,7 +138,7 @@ export default function LiveArbitrageDemo() {
                 <div className="text-sm text-gray-600 dark:text-gray-400">Buy at {opportunity.buyAt.exchange}</div>
                 <div className="text-xl font-bold">${opportunity.buyAt.price.toFixed(2)}</div>
               </div>
-              <FaArrowRight className="text-green-500" />
+              <FaArrowRight className="text-emerald-500" />
               <div className="text-center">
                 <div className="text-sm text-gray-600 dark:text-gray-400">Sell at {opportunity.sellAt.exchange}</div>
                 <div className="text-xl font-bold">${opportunity.sellAt.price.toFixed(2)}</div>
@@ -146,7 +146,7 @@ export default function LiveArbitrageDemo() {
             </div>
             <div className="text-center">
               <div className="text-sm text-gray-600 dark:text-gray-400">Potential Profit</div>
-              <div className="text-xl font-bold text-green-600">
+              <div className="text-xl font-bold text-emerald-600">
                 ${opportunity.profit.toFixed(2)}
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function LiveArbitrageDemo() {
           </div>
           <div>
             <div className="text-gray-500 dark:text-gray-400">Privacy Level</div>
-            <div className="font-medium text-green-600">Shielded</div>
+            <div className="font-medium text-emerald-600">Shielded</div>
           </div>
         </div>
       </div>
