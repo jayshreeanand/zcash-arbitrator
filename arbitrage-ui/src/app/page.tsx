@@ -1,8 +1,11 @@
+'use client';
+
 import PriceMonitor from '@/components/PriceMonitor';
 import ArbitrageOpportunities from '@/components/ArbitrageOpportunities';
 import TransactionHistory from '@/components/TransactionHistory';
 import { FaRobot, FaChartLine, FaShieldAlt, FaLock } from 'react-icons/fa';
 import Link from 'next/link';
+import LiveArbitrageDemo from '@/components/demo/LiveArbitrageDemo';
 
 export default function Home() {
   return (
@@ -20,9 +23,20 @@ export default function Home() {
             Launch App
           </Link>
           <Link href="/demo" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
-            View Demo
+            View Full Demo
           </Link>
         </div>
+      </div>
+
+      {/* Live Demo Preview */}
+      <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">Live Arbitrage Analysis</h2>
+          <Link href="/demo" className="text-indigo-600 hover:text-indigo-700 font-medium">
+            View Full Demo →
+          </Link>
+        </div>
+        <LiveArbitrageDemo />
       </div>
 
       {/* Features Section */}

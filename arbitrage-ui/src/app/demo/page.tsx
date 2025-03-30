@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
-import { FaArrowLeft, FaPlay, FaChartLine, FaShieldAlt } from 'react-icons/fa';
+import { FaArrowLeft, FaChartLine, FaShieldAlt, FaPlay } from 'react-icons/fa';
+import LiveArbitrageDemo from '@/components/demo/LiveArbitrageDemo';
 
 export default function Demo() {
   return (
@@ -15,15 +18,10 @@ export default function Demo() {
 
       {/* Demo Content */}
       <div className="space-y-8">
-        {/* Demo Video */}
+        {/* Live Demo */}
         <div className="bg-white dark:bg-gray-800 shadow rounded-lg p-6">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Watch How It Works</h2>
-          <div className="aspect-video bg-gray-900 rounded-lg flex items-center justify-center">
-            <button className="text-white flex items-center space-x-2 bg-indigo-600 px-6 py-3 rounded-full hover:bg-indigo-700">
-              <FaPlay />
-              <span>Play Demo</span>
-            </button>
-          </div>
+          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4">Live Arbitrage Analysis</h2>
+          <LiveArbitrageDemo />
         </div>
 
         {/* Demo Features */}
@@ -37,7 +35,7 @@ export default function Demo() {
               See how our AI identifies and executes profitable trades across multiple blockchains.
             </p>
             <button className="text-indigo-600 font-semibold hover:text-indigo-700">
-              Try Demo →
+              Learn More →
             </button>
           </div>
 
@@ -50,7 +48,7 @@ export default function Demo() {
               Experience how Zcash&apos;s shielded transactions protect your trading privacy.
             </p>
             <button className="text-indigo-600 font-semibold hover:text-indigo-700">
-              Try Demo →
+              Learn More →
             </button>
           </div>
 
@@ -63,7 +61,7 @@ export default function Demo() {
               Test the platform with simulated funds in a real market environment.
             </p>
             <button className="text-indigo-600 font-semibold hover:text-indigo-700">
-              Try Demo →
+              Learn More →
             </button>
           </div>
         </div>
