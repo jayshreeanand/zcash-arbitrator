@@ -15,7 +15,11 @@ MAX_GAS = 300 * 10 ** 12
 SOLVER_BUS_URL = "https://solver-relay-v2.chaindefuser.com/rpc"
 
 ASSET_MAP = {
-    'USDC': { 
+     'ZCASH': {
+        'token_id': 'zec.omft.near',
+        'decimals': 8,
+    }
+,    'USDC': { 
         'token_id': 'a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.factory.bridge.near',
         'omft': 'eth-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48.omft.near',
         'decimals': 6,
