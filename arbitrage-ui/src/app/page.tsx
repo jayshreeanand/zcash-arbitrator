@@ -1,7 +1,7 @@
 import PriceMonitor from '@/components/PriceMonitor';
 import ArbitrageOpportunities from '@/components/ArbitrageOpportunities';
 import TransactionHistory from '@/components/TransactionHistory';
-import { FaRobot, FaChartLine, FaShieldAlt, FaCode } from 'react-icons/fa';
+import { FaRobot, FaChartLine, FaShieldAlt, FaLock } from 'react-icons/fa';
 
 export default function Home() {
   return (
@@ -9,10 +9,10 @@ export default function Home() {
       {/* Hero Section */}
       <div className="text-center py-16 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-lg shadow-xl">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          ZCash Arbitrator
+          ZCash Cross-Chain Arbitrator
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-100">
-          AI-Powered Cross-Chain Arbitrage Bot for ZEC/NEAR Trading
+          AI-powered Cross-Chain Arbitrage Bot that detects and exploits price differences of ZEC across multiple blockchains (BTC, ETH, SOL) using NEAR Intents and Chain Signatures. Ensure privacy by leveraging Zcash&apos;s shielded transactions.
         </p>
         <div className="flex justify-center gap-4">
           <button className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
@@ -34,36 +34,36 @@ export default function Home() {
             <div className="text-indigo-600 dark:text-indigo-400 mb-4">
               <FaRobot className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">AI-Powered</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">AI-Powered Analysis</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Machine learning algorithms predict price movements and identify profitable opportunities
+              Advanced machine learning models detect profitable cross-chain opportunities and predict market movements
             </p>
           </div>
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
             <div className="text-indigo-600 dark:text-indigo-400 mb-4">
               <FaChartLine className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Real-time Analysis</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Cross-Chain Integration</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Continuous monitoring of prices across multiple exchanges for instant arbitrage detection
+              Seamless trading across BTC, ETH, SOL chains using NEAR Intents and Chain Signatures
+            </p>
+          </div>
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="text-indigo-600 dark:text-indigo-400 mb-4">
+              <FaLock className="w-8 h-8" />
+            </div>
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Privacy Protection</h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              Enhanced privacy through Zcash&apos;s shielded transactions and secure key management
             </p>
           </div>
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
             <div className="text-indigo-600 dark:text-indigo-400 mb-4">
               <FaShieldAlt className="w-8 h-8" />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Risk Management</h3>
+            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Smart Automation</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Advanced risk controls and configurable safety parameters for secure trading
-            </p>
-          </div>
-          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="text-indigo-600 dark:text-indigo-400 mb-4">
-              <FaCode className="w-8 h-8" />
-            </div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Open Source</h3>
-            <p className="text-gray-600 dark:text-gray-400">
-              Transparent, community-driven development with customizable strategies
+              Automated opportunity detection and execution with advanced risk management
             </p>
           </div>
         </div>
