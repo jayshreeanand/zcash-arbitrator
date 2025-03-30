@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       {/* Features Section */}
-      <div className="py-12">
+      <div id="features" className="py-12">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
           Key Features
         </h2>
@@ -70,7 +70,7 @@ export default function Home() {
       </div>
 
       {/* Live Dashboard */}
-      <div className="space-y-6">
+      <div id="dashboard" className="space-y-6">
         <h2 className="text-3xl font-bold text-center mb-8 text-gray-900 dark:text-gray-100">
           Live Dashboard
         </h2>
@@ -114,7 +114,7 @@ export default function Home() {
       </div>
 
       {/* How It Works */}
-      <div className="py-12">
+      <div id="how-it-works" className="py-12">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">
           How It Works
         </h2>
