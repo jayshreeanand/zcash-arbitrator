@@ -1,0 +1,25 @@
+{
+    "exchanges": ["binance", "kraken", "gate"],
+    "trading_pairs": ["ZEC/USDT", "NEAR/USDT"],
+    "update_interval": 5,
+    "history_window": 24,
+    "test_mode": true,
+    "min_profit_threshold": 0.001,
+    "trade_amount": 0.01,
+    "max_trades_per_hour": 5,
+    "risk_level": "low",
+    "api_keys": {
+        "binance": {
+            "api_key": "YOUR_API_KEY",
+            "secret": "YOUR_SECRET"
+        },
+        "kraken": {
+            "api_key": "YOUR_API_KEY",
+            "secret": "YOUR_SECRET"
+        },
+        "gate": {
+            "api_key": "YOUR_API_KEY",
+            "secret": "YOUR_SECRET"
+        }
+    }
+} 
