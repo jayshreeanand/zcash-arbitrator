@@ -2,6 +2,7 @@ import PriceMonitor from '@/components/PriceMonitor';
 import ArbitrageOpportunities from '@/components/ArbitrageOpportunities';
 import TransactionHistory from '@/components/TransactionHistory';
 import { FaRobot, FaChartLine, FaShieldAlt, FaLock } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -15,12 +16,12 @@ export default function Home() {
           AI-powered Cross-Chain Arbitrage Bot that detects and exploits price differences of ZEC across multiple blockchains (BTC, ETH, SOL) using NEAR Intents and Chain Signatures. Ensure privacy by leveraging Zcash&apos;s shielded transactions.
         </p>
         <div className="flex justify-center gap-4">
-          <button className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-            Get Started
-          </button>
-          <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
+          <Link href="/dashboard" className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+            Launch App
+          </Link>
+          <Link href="/demo" className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors">
             View Demo
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -155,9 +156,9 @@ export default function Home() {
         <p className="text-xl mb-8">
           Join the future of automated cross-chain arbitrage trading
         </p>
-        <button className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
-          Get Started Now
-        </button>
+        <Link href="/dashboard" className="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+          Launch App
+        </Link>
       </div>
     </div>
   );
