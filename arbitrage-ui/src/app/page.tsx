@@ -16,7 +16,7 @@ export default function Home() {
           ZCash Cross-Chain Arbitrator
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-100">
-          AI-powered Cross-Chain Arbitrage Bot that detects and exploits price differences of ZEC across multiple blockchains (BTC, ETH, SOL) using NEAR Intents and Chain Signatures. Ensure privacy by leveraging Zcash&apos;s shielded transactions.
+          AI-powered Cross-Chain Arbitrage Agent that detects and exploits price differences of ZEC across multiple blockchains (BTC, ETH, SOL) using NEAR Intents and Chain Signatures. Ensures privacy by leveraging Zcash&apos;s shielded transactions.
         </p>
         <div className="flex justify-center gap-4">
           <Link href="/dashboard" className="bg-white text-emerald-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">

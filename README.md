@@ -4,7 +4,7 @@ AI-powered Cross-Chain Arbitrage Bot that detects and exploits price differences
 
 Near Intents Execution - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/near_intents/near_intents.py
 
-Arbitration Bot code - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/arbitrage-bot.py
+Arbitration Agent code - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/arbitrage-bot.py
 
 ## 🌟 Features
 
