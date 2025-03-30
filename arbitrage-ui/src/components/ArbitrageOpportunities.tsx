@@ -15,13 +15,13 @@ interface Opportunity {
 
 const generateMockOpportunities = (): Opportunity[] => {
   const exchanges = ['Binance', 'Kraken', 'Gate.io', 'MEXC'];
-  return Array.from({ length: 5 }, (_, i) => {
+  return Array.from({ length: 3 }, (_, i) => {
     const buyExchange = exchanges[Math.floor(Math.random() * exchanges.length)];
     const sellExchange = exchanges.filter(e => e !== buyExchange)[Math.floor(Math.random() * (exchanges.length - 1))];
-    const buyPrice = +(Math.random() * 10 + 85).toFixed(2);
-    const sellPrice = +(buyPrice * (1 + Math.random() * 0.05)).toFixed(2);
+    const buyPrice = +(25 + Math.random() * 0.5).toFixed(2);
+    const sellPrice = +(buyPrice * (1 + Math.random() * 0.002)).toFixed(2);
     const profit = +(sellPrice - buyPrice).toFixed(2);
-    const profitPercentage = +((profit / buyPrice) * 100).toFixed(2);
+    const profitPercentage = +((profit / buyPrice) * 100).toFixed(3);
 
     return {
       id: `opp-${i}`,

@@ -16,12 +16,13 @@ interface Transaction {
 const generateMockTransactions = (): Transaction[] => {
   const exchanges = ['Binance', 'Kraken', 'Gate.io', 'MEXC'];
   const types: ('buy' | 'sell')[] = ['buy', 'sell'];
-  const statuses: ('completed' | 'pending' | 'failed')[] = ['completed', 'pending', 'failed'];
 
-  return Array.from({ length: 10 }, (_, i) => {
+  return Array.from({ length: 5 }, (_, i) => {
     const type = types[Math.floor(Math.random() * types.length)];
-    const price = +(Math.random() * 10 + 85).toFixed(2);
-    const amount = +(Math.random() * 2).toFixed(4);
+    const price = +(25 + Math.random() * 0.5).toFixed(2);
+    const amount = +(Math.random() * 0.1).toFixed(4);
+    
+    const status: Transaction['status'] = i === 0 ? 'pending' : 'completed';
     
     return {
       id: `tx-${i}`,
@@ -30,8 +31,8 @@ const generateMockTransactions = (): Transaction[] => {
       amount,
       price,
       total: +(price * amount).toFixed(2),
-      status: statuses[Math.floor(Math.random() * statuses.length)],
-      timestamp: new Date(Date.now() - Math.random() * 86400000).toISOString(), // Last 24 hours
+      status,
+      timestamp: new Date(Date.now() - Math.random() * 3600000).toISOString(),
     };
   }).sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 };

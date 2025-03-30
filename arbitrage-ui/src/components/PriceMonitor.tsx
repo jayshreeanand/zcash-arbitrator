@@ -61,21 +61,29 @@ const options = {
 export default function PriceMonitor() {
   const [chartData, setChartData] = useState<ChartData<'line'>>(() => generateMockData());
   const [currentPrice, setCurrentPrice] = useState({
-    zec: 85.23,
-    near: 1.45,
-    ratio: 58.78,
+    zec: 25.43,
+    near: 1.15,
+    ratio: 22.11,
   });
 
-  // Simulate real-time updates
+  // Simulate real-time updates with smaller variations
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPrice(prev => ({
-        zec: +(prev.zec + (Math.random() - 0.5)).toFixed(2),
-        near: +(prev.near + (Math.random() - 0.5) * 0.1).toFixed(2),
+        zec: +(prev.zec + (Math.random() - 0.5) * 0.02).toFixed(2), // Smaller price changes
+        near: +(prev.near + (Math.random() - 0.5) * 0.01).toFixed(2),
         ratio: +(prev.zec / prev.near).toFixed(2),
       }));
 
-      setChartData(generateMockData());
+      setChartData(prev => ({
+        ...prev,
+        datasets: [{
+          ...prev.datasets[0],
+          data: prev.datasets[0].data.map(() => 
+            Math.random() * 0.5 + 25 // Values between 25 and 25.5
+          ),
+        }],
+      }));
     }, 5000);
 
     return () => clearInterval(interval);
