@@ -1,6 +1,6 @@
-# ZCash Arbitrator
+# ZCash Cross-Chain Arbitrator
 
-An AI-powered cross-chain arbitrage bot that detects and exploits price differences of ZEC across multiple blockchains using NEAR Intents and Chain Signatures.
+AI-powered Cross-Chain Arbitrage Bot that detects and exploits price differences of ZEC across multiple blockchains (BTC, ETH, SOL, etc.) using NEAR Intents and Chain Signatures. Ensure privacy by leveraging Zcash's shielded transactions.
 
 Near Intents Execution - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/near_intents/near_intents.py
 
@@ -166,7 +166,43 @@ graph TD
 
 ## Overview
 
-NEAR Intents is a system for executing multichain transactions. An intent represents a user's desired state change (e.g., "I want to swap X NEAR for Y ZEC") rather than a specific execution path. This allows for more flexible and efficient execution of financial operations.
+The ZCash Cross-Chain Arbitrator is an intelligent trading system that:
+
+- Monitors ZEC prices across multiple blockchain networks in real-time
+- Uses AI to identify profitable arbitrage opportunities
+- Executes secure cross-chain trades using NEAR Intents
+- Maintains transaction privacy through Zcash's shielded pools
+- Automates the entire arbitrage process with smart chain signatures
+
+## Key Features
+
+### AI-Powered Price Analysis
+
+- Real-time price monitoring across multiple blockchains
+- Machine learning models for opportunity detection
+- Predictive analytics for price movements
+- Risk assessment and optimization
+
+### Cross-Chain Integration
+
+- Seamless integration with BTC, ETH, SOL, and other chains
+- NEAR Intents for efficient cross-chain execution
+- Chain signature validation
+- Automated transaction routing
+
+### Privacy Protection
+
+- Zcash shielded transaction support
+- Private transaction execution
+- Secure key management
+- Anonymous trade routing
+
+### Smart Automation
+
+- Automated opportunity detection
+- Intelligent trade execution
+- Risk management controls
+- Performance analytics
 
 ### Protocol Architecture
 

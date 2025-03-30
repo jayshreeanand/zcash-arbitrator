@@ -1,14 +1,36 @@
-# ZCash Arbitrator Frontend
+# ZCash Cross-Chain Arbitrator Frontend
 
-The frontend dashboard for the ZCash Arbitrator project. Built with Next.js, TypeScript, and TailwindCSS.
+Interactive dashboard for AI-powered Cross-Chain Arbitrage Bot that detects and exploits price differences of ZEC across multiple blockchains (BTC, ETH, SOL, etc.) using NEAR Intents and Chain Signatures. Features privacy-preserving views leveraging Zcash's shielded transactions.
 
 ## Features
 
-- Real-time price monitoring
-- Interactive charts and statistics
-- Transaction history tracking
-- Dark/Light mode support
-- Responsive design
+### AI-Powered Analytics
+
+- Real-time arbitrage opportunity detection
+- Machine learning-based price predictions
+- Risk assessment visualization
+- Profit potential analysis
+
+### Cross-Chain Monitoring
+
+- Multi-blockchain price tracking (BTC, ETH, SOL)
+- Interactive price comparison charts
+- Liquidity pool monitoring
+- Transaction fee analysis
+
+### Privacy-First Design
+
+- Shielded transaction integration
+- Private analytics dashboard
+- Secure key management interface
+- Anonymous reporting tools
+
+### Smart Automation
+
+- Automated trade execution interface
+- Custom strategy configuration
+- Risk management settings
+- Performance tracking
 
 ## Getting Started
 
@@ -30,12 +52,24 @@ The frontend dashboard for the ZCash Arbitrator project. Built with Next.js, Typ
 
 ```
 src/
-├── app/              # Next.js app router
-├── components/       # React components
-│   ├── PriceMonitor.tsx
-│   ├── ArbitrageOpportunities.tsx
-│   └── TransactionHistory.tsx
-└── python/          # Backend integration
+├── app/                    # Next.js app router
+├── components/
+│   ├── ai/                # AI analytics components
+│   │   ├── Predictions.tsx
+│   │   └── RiskAnalysis.tsx
+│   ├── chains/            # Cross-chain components
+│   │   ├── PriceMonitor.tsx
+│   │   └── ChainStatus.tsx
+│   ├── privacy/           # Privacy components
+│   │   ├── ShieldedTx.tsx
+│   │   └── SecureAnalytics.tsx
+│   └── automation/        # Automation components
+│       ├── Strategies.tsx
+│       └── Execution.tsx
+└── utils/
+    ├── ai.ts              # AI/ML utilities
+    ├── chains.ts          # Chain interaction
+    └── privacy.ts         # Privacy functions
 ```
 
 ## Dependencies
@@ -43,7 +77,15 @@ src/
 - Next.js 14
 - TypeScript
 - TailwindCSS
-- Chart.js
-- React Icons
+- TensorFlow.js (for AI features)
+- Web3 libraries
+- Privacy-preserving analytics
 
-For the complete project documentation, please refer to the [main README](../README.md) in the root directory.
+## Security Features
+
+- End-to-end encryption
+- Secure key storage
+- Privacy-preserving analytics
+- Anonymous operation modes
+
+For complete documentation, see the [main README](../README.md).
