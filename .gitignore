@@ -1,6 +1,6 @@
 # Environment variables
 .env
-
+replace.txt
 
 # Account credentials
 account_file.json
