@@ -101,7 +101,7 @@ class AIAgent:
                 
             balance_near = float(account_state['amount']) / 10**24  # Convert yoctoNEAR to NEAR
             logging.info("Account state: Balance %.4f NEAR", balance_near)
-            
+            logging.info("Account state: %s", account_state)
             if balance_near < 0.1:  # Minimum balance check
                 raise ValueError(f"Insufficient balance ({balance_near} NEAR). Minimum required: 0.1 NEAR")
                 
