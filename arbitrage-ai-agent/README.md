@@ -4,6 +4,10 @@
 
 A Python implementation for interacting with NEAR using intents for multichain transactions. This implementation provides an AI Agent that automates token swaps and other operations on the NEAR mainnet.
 
+Near Intents Execution - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/near_intents/near_intents.py
+
+Arbitration Bot code - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/arbitrage-bot.py
+
 ## System Architecture & Flow
 
 ```mermaid
@@ -33,10 +37,12 @@ graph TD
 ### Flow Description
 
 1. **Initialization**:
+
    - User initializes AI Agent with credentials
    - Agent deposits NEAR tokens for operations
 
 2. **Quote Process**:
+
    - Create intent request for token swap
    - Query Solver Bus for quotes
    - Solvers provide best execution options
@@ -95,11 +101,13 @@ near-intents-ai-agent/
 ### Component Mapping
 
 1. **Solver Bus Integration** (`near_intents.py`):
+
    - Communicates with the off-chain Solver Bus
    - Fetches trading options and quotes
    - Publishes signed intents
 
 2. **Intent Creation & Verification** (`near_intents.py`):
+
    - Creates and signs token diff intents
    - Interacts with the on-chain verifier contract
    - Handles token deposits and withdrawals
@@ -112,6 +120,7 @@ near-intents-ai-agent/
 ### Key Components
 
 1. **Intent Settlement**:
+
    - **Solver Bus**: An off-chain message bus for communication between users and solvers
    - **Verifier**: Smart contract on NEAR that verifies and executes signed intents
 
@@ -127,6 +136,7 @@ near-intents-ai-agent/
 The AI Agent serves as a high-level interface for executing intents on NEAR mainnet. It handles:
 
 1. **Account Management**:
+
    - Loading NEAR accounts from key files
    - Registering public keys for intent operations
    - Managing token storage registration
@@ -141,6 +151,7 @@ The AI Agent serves as a high-level interface for executing intents on NEAR main
 The core library implementing the NEAR Intents protocol:
 
 1. **Asset Management**:
+
    - Token mappings and identifiers
    - Decimal precision handling
    - Storage registration
@@ -197,7 +208,7 @@ The swap process involves several steps:
    request = IntentRequest()
        .set_asset_in("NEAR", amount_in)
        .set_asset_out("USDC")
-   
+
    # Get quotes from Solver Bus
    options = fetch_options(request)
    best_option = select_best_option(options)
@@ -210,7 +221,7 @@ The swap process involves several steps:
    quote = create_token_diff_quote(
        account, "NEAR", amount_in, "USDC", best_option['amount_out']
    )
-   
+
    # Submit to Solver Bus
    response = publish_intent(quote)
    ```
@@ -236,8 +247,8 @@ SWAP_AMOUNT=1.0
 
 ```json
 {
-    "account_id": "your-account.near",
-    "private_key": "ed25519:..."
+  "account_id": "your-account.near",
+  "private_key": "ed25519:..."
 }
 ```
 
@@ -331,11 +342,11 @@ result = agent.swap_near_to_token("USDC", 1.0)
 ```python
 try:
     agent = AIAgent("./account_file.json")
-    
+
     # Check account state
     account_state = agent.account.state()
     balance_near = float(account_state['amount']) / 10**24
-    
+
     if balance_near > 1.0:
         # Deposit and swap
         agent.deposit_near(1.0)
@@ -373,6 +384,7 @@ The implementation includes comprehensive error handling for:
 ## Security Considerations
 
 1. **Private Key Management**:
+
    - Store private keys securely
    - Use environment variables for sensitive data
    - Never commit credentials to version control

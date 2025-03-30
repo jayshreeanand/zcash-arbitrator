@@ -2,6 +2,10 @@
 
 An AI-powered cross-chain arbitrage bot that detects and exploits price differences of ZEC across multiple blockchains using NEAR Intents and Chain Signatures.
 
+Near Intents Execution - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/near_intents/near_intents.py
+
+Arbitration Bot code - https://github.com/akcodes07/zcash-arbitrator/blob/main/arbitrage-ai-agent/src/arbitrage-bot.py
+
 ## 🌟 Features
 
 ### 1. AI-Powered Trading Engine
@@ -104,6 +108,76 @@ graph TD
 
     Execute --> Log[Log Transaction]
     Log --> Update
+```
+
+## NEAR Intent Agent flow
+
+## System Architecture & Flow
+
+```mermaid
+graph TD
+    A([User]) --> B[AI Agent]
+    B --> C[Intent Contract]
+    C --> D[Intent Request]
+    D --> E[Solver Bus]
+    E --> F[Solvers Pool]
+    F --> E
+    E --> D
+    D --> G[Signed Intent]
+    G --> H[Verifier Contract]
+    H --> I[State Change]
+
+    style A fill:#f9f9f9
+    style B fill:#d4edda
+    style C fill:#cce5ff
+    style D fill:#cce5ff
+    style E fill:#fff3cd
+    style F fill:#fff3cd
+    style G fill:#e2e3e5
+    style H fill:#f8d7da
+    style I fill:#f8d7da
+```
+
+### Flow Description
+
+1. **Initialization**:
+
+   - User initializes AI Agent with credentials
+   - Agent deposits NEAR tokens for operations
+
+2. **Quote Process**:
+
+   - Create intent request for token swap
+   - Query Solver Bus for quotes
+   - Solvers provide best execution options
+   - Best quote is selected
+
+3. **Execution**:
+   - Sign the selected quote
+   - Submit to Verifier Contract
+   - Execute state changes on-chain
+
+### Implementation Components
+
+- **AI Agent** (`ai_agent.py`): High-level interface for users
+- **NEAR Intents** (`near_intents.py`): Core protocol interactions
+- **Solver Bus**: Off-chain quote aggregation
+- **Verifier Contract**: On-chain execution and settlement
+
+## Overview
+
+NEAR Intents is a system for executing multichain transactions. An intent represents a user's desired state change (e.g., "I want to swap X NEAR for Y ZEC") rather than a specific execution path. This allows for more flexible and efficient execution of financial operations.
+
+### Protocol Architecture
+
+```bash
+NEAR Intents
+├── Intent Settlement
+│   ├── Solver Bus (off-chain message bus)
+│   └── Verifier (on-chain smart contract)
+└── Entities
+    ├── Distribution Channels
+    └── Solvers
 ```
 
 ## 🛠️ Technical Stack
@@ -231,9 +305,3 @@ graph TD
 ## 📝 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 🙏 Acknowledgments
-
-- NEAR Protocol team
-- ZCash community
-- Open source contributors
